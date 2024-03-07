@@ -1,11 +1,18 @@
-<div class="container">
-    <h1>Home</h1>
-    <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
+<div class="container m-5">
+    <h1 class="text-center">Bienvenido a la página de cursos</h1>
+    <h4 class="text-center">
+        A continuación encontraras el listado de cursos, donde podras crear, editar y eliminar
+    </h4>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Launch demo modal
+    </button>
+    <livewire:courses.create />
+    <ul>
+        @foreach ($courses as $course)
+            <li>
+                <p>{{ $course->name }}</p>
+            </li>
+        @endforeach
+    </ul>
+    {{ $courses->links() }}
 </div>
