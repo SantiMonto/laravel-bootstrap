@@ -1,6 +1,8 @@
 <?php
 
+use App\Livewire\Courses\Edit;
 use App\Livewire\Courses\Index as Home;
+use App\Livewire\Courses\Show;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,4 +16,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', Home::class);
+Route::get('/', Home::class)->name('courses.home');
+Route::get('/courses/{course}/{category?}', Show::class)->name('courses.show');
+
